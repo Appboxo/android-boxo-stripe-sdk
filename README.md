@@ -4,7 +4,7 @@
 
 Add the below code to your app `build.gradle` file (not your root build.gradle file).
 
-more about [Appboxo SDK]([https://github.com/Appboxo/sample-android-hostapp](https://github.com/Appboxo/android-sdk-packages))
+more about [Appboxo SDK](https://github.com/Appboxo/android-sdk-packages)
 
 ```gradle
 dependencies {
