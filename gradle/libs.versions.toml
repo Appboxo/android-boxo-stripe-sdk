@@ -10,7 +10,7 @@ activityCompose = "1.9.3"
 composeBom = "2024.04.01"
 appcompat = "1.7.0"
 material = "1.12.0"
-sdk = "1.12.0"
+boxoAndroid = "1.23.0"
 stripeAndroid = "20.53.0"
 
 [libraries]
@@ -30,7 +30,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-appboxoSdk = { module = "com.appboxo:sdk", version.ref = "sdk" }
+boxoSdk = { module = "io.boxo.sdk:boxo-android", version.ref = "boxoAndroid" }
 stripe-android = { module = "com.stripe:stripe-android", version.ref = "stripeAndroid" }
 
 [plugins]

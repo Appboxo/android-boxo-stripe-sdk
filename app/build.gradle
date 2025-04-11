@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.appboxo.stripepayment'
+    namespace 'io.boxo.stripepayment'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.appboxo.stripepayment"
+        applicationId "io.boxo.stripepayment"
         minSdk 21
         targetSdk 34
         versionCode 1
@@ -64,6 +64,6 @@ dependencies {
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
     implementation libs.stripe.android
-    implementation libs.appboxoSdk
+    implementation libs.boxoSdk
     implementation project(':stripe')
 }
