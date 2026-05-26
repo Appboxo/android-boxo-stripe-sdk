@@ -40,10 +40,10 @@ Open miniapp on your Activity
 
 ```kotlin
  Boxo.getMiniapp("[app_id]")
-                .setPaymentEventListener { boxoActivity, miniapp, paymentData ->
-                    AppboxoStripe.handleStripePayment(boxoActivity, miniapp, paymentData)
+                .setPaymentEventListener { fragment, miniapp, paymentData ->
+                    AppboxoStripe.handleStripePayment(fragment, miniapp, paymentData)
                 }
-                .setAuthListener { boxoActivity, miniapp ->
+                .setAuthListener { _, miniapp ->
                     // get auth_code from your backend
                     miniapp.setAuthCode("[auth_code]")
                 }

@@ -1,4 +1,4 @@
-name: SDK Prod
+name: Stripe Boxo SDK
 
 on:
   push:
