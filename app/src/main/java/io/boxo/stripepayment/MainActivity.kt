@@ -15,11 +15,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.fragment.app.FragmentActivity
 import io.boxo.sdk.Boxo
 import io.boxo.stripe.BoxoStripe
 import io.boxo.stripepayment.ui.theme.StripePaymentTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -39,17 +40,16 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Greeting(modifier: Modifier = Modifier) {
         Box(modifier = modifier) {
-            val context = LocalContext.current
             Button(
                 onClick = {
                     Boxo.getMiniapp("app_id")
                         .setPaymentEventListener { boxoActivity, miniapp, paymentData ->
                             BoxoStripe.handleStripePayment(boxoActivity, miniapp, paymentData)
                         }
-                        .setAuthListener { boxoActivity, miniapp ->
+                        .setAuthListener { _, miniapp ->
                             miniapp.setAuthCode("auth_code")
                         }
-                        .open(context)
+                        .open()
                 },
                 modifier = Modifier.align(Alignment.Center)
             ) {

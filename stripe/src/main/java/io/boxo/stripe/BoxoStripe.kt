@@ -3,7 +3,7 @@ package io.boxo.stripe
 import android.app.Application
 import io.boxo.js.params.PaymentData
 import io.boxo.sdk.Miniapp
-import io.boxo.ui.main.BoxoActivity
+import io.boxo.ui.main.BoxoFragment
 import com.stripe.android.PaymentConfiguration
 
 object BoxoStripe {
@@ -18,10 +18,10 @@ object BoxoStripe {
         PaymentConfiguration.init(application, publishableKey)
     }
 
-    fun handleStripePayment(activity: BoxoActivity, miniapp: Miniapp, paymentData: PaymentData) {
+    fun handleStripePayment(fragment: BoxoFragment, miniapp: Miniapp, paymentData: PaymentData) {
         StripePaymentDialog().apply {
             this.miniapp = miniapp
             this.paymentData = paymentData
-        }.show(activity.supportFragmentManager, "boxo_stripe_payment")
+        }.show(fragment.childFragmentManager, "boxo_stripe_payment")
     }
 }
